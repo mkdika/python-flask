@@ -1,11 +1,14 @@
 from flask import Flask
+
 app = Flask(__name__)
 
 
 # default method is GET
+# can be multiple routes mapped, in this case "/" and "/index"
 @app.route("/")
-def hello():
-    return "Hello World!"
+@app.route("/index")
+def index():
+    return "Hello World XXX!"
 
 
 # path variable
@@ -21,4 +24,6 @@ def echo(message):
 
 
 if __name__ == '__main__':
+
+    # Enable debug mode for development
     app.run(debug=True)
